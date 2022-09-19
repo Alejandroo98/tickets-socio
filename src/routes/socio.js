@@ -51,31 +51,26 @@ router.get("/bus", (req, res) => {
   res.render("socio/bus");
 });
 
-router.get(
-  "/detalle",
-  async (req, res) => {
-    let userInto = {
-      id: 2,
-      dni: 1725648560,
-      name: 'Pepe',
-      email:  'r@r.com'
-    };
+router.get("/detalle", async (req, res) => {
+  let userInto = [5, "1725648562", "Juan", "a@r.com"];
 
-    const data = `INSERT INTO passengers (id,dni,name,email) VALUES (${userInto.id},${userInto.dni},${userInto.name},${userInto.email})`;
+  const data = `INSERT INTO passengers(id,dni,name,email) VALUES ($1,$2,$3,$4)`;
+  /* Insertar datos en una tabla  */
+  
+  /* await pool.query(data, userInto).then((response) => {
+    console.log(response, "Usuario ingreso?");
+  }); */
 
-    await pool.query(data).then((response) => {
-      console.log(response, "Usuario ingreso?");
+  /* listamos todos los pasajeros */
+
+  let users = await pool
+    .query("SELECT * FROM public.passengers")
+    .then((res) => {
+      return !res.rows ? [] : res.rows;
     });
 
-    let users = await pool
-      .query("SELECT * FROM public.passengers")
-      .then((res) => {
-        return !res.rows ? [] : res.rows;
-      });
-
-    res.render("socio/detalle", { datos, users });
-  }
-);
+  res.render("socio/detalle", { datos, users });
+});
 
 router.get("/bus-coop", (req, res) => {
   res.render("socio/bus-coop");
