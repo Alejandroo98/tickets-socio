@@ -55,12 +55,13 @@ router.get(
   "/detalle",
   async (req, res) => {
     let userInto = {
+      id: 2,
       dni: 1725648560,
-      name: 'test',
+      name: 'Pepe',
       email:  'r@r.com'
     };
 
-    const data = `INSERT INTO passengers (dni,name,email) VALUES (${userInto.dni},${userInto.name},${userInto.email})`;
+    const data = `INSERT INTO passengers (id,dni,name,email) VALUES (${userInto.id},${userInto.dni},${userInto.name},${userInto.email})`;
 
     await pool.query(data).then((response) => {
       console.log(response, "Usuario ingreso?");
