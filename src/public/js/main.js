@@ -3,6 +3,7 @@ const { pathname } = window.location;
 const inicio = document.querySelector('.inicio');
 const bus = document.querySelector('.bus');
 const datalle = document.querySelector('.datalle');
+const Encomienda = document.querySelector('.Encomienda');
 
 console.log(pathname);
 
@@ -18,4 +19,8 @@ switch (pathname) {
   case '/detalle':
     datalle.classList.add('active');
     break;
+  case '/Encomienda':
+      Encomienda.classList.add('active');
+      break;
+
 }

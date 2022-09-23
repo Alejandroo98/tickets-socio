@@ -1,4 +1,5 @@
 const express = require('express');
+
 const morgan = require('morgan');
 const exphbs = require('express-handlebars');
 const path = require('path');
@@ -27,7 +28,7 @@ app.engine(
 );
 
 app.set('view engine', '.hbs');
-
+//JOSEPH ALMACHI 
 // Middlewares
 app.use(
   session({
