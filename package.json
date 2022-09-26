@@ -1,28 +1,24 @@
 {
-  "name": "nodejs-mysql-app",
+  "name": "tickets-socio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.js",
-    "start": "nodemon src/index.js"
+    "dev": "nodemon src/index.js"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "connect-flash": "^0.1.1",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.3.0",
-    "express-pg-session": "^1.1.0",
-    "express-session": "^1.17.1",
-    "express-validator": "^6.10.0",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
     "morgan": "^1.10.0",
-    "nodemailer": "^6.6.3",
-    "passport": "^0.4.1",
-    "passport-local": "^1.0.0",
-    "pg": "^8.7.1"
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.23.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.21",
+    "nodemon": "^2.0.20"
   }
 }
