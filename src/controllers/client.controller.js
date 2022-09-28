@@ -1,23 +1,20 @@
-import helpers from "../lib/helpers.js";
-import { Client } from "../models/client.js";
-
-export const getIndex = (_req, res) => {
+const helpers = require("../lib/helpers");
+const Client = require("../models/client");
+const clientController = {};
+/* Redirect Views */
+clientController.getIndex = (_req, res) => {
   res.render("client/index");
 };
 
-export const getRegister = (_req, res) => {
+clientController.getRegister = (_req, res) => {
   res.render("client/register");
 };
 
-export const listEconmmied = (_req, res) => {
-  res.render("encomiendas/lista-encomiendas");
-};
-
-export const getLogin = (_req, res) => {
+clientController.getLogin = (_req, res) => {
   res.render("client/login");
 };
 
-export const postClient = async (req, res) => {
+clientController.postClient = async (req, res) => {
   const { email, password } = req.body;
   const clientDB = await Client.findOne({
     where: {
@@ -57,7 +54,7 @@ export const postClient = async (req, res) => {
   res.redirect("/client/");
 };
 
-export const postLogin = async (req, res) => {
+clientController.postLogin = async (req, res) => {
   const { email, password } = req.body;
   const clientDB = await Client.findOne({
     where: {
@@ -85,23 +82,5 @@ export const postLogin = async (req, res) => {
   res.redirect("/client/");
 };
 
-export const getUsers = async (_req, res) => {
-  const users = await User.findAll()
-    .then((res) => {
-      return res;
-    })
-    .catch(() => {
-      return null;
-    });
 
-  if (!users) return res.status(404).json("failed query");
-  res.json({ users: users });
-};
-
-export const createUser = async (req, res) => {
-  console.log("req", req.body);
-  const newUser = await User.create(req.body);
-  console.log(newUser, "new");
-
-  res.send("post user");
-};
+module.exports = clientController

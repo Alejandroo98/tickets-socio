@@ -1,6 +1,8 @@
-import { User } from "../models/user.js";
+ticketController = {}
 
 
-export const  getIndex=(_req,res)=>{
+ticketController.getIndex=(_req,res)=>{
   res.render('reserves/index-ticket')
 }
+
+module.exports = ticketController;

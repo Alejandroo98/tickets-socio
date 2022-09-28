@@ -1,11 +1,11 @@
-import app from "./app.js";
-import sequelize  from "./database/db.js";
+const app = require("./app.js");
+const sequelize = require("./database/db.js");
 
 const port = 3000;
 
 async function main() {
   try {
-    await sequelize.sync({force:false});
+    await sequelize.sync({ force: false });
     app.listen(port);
     console.log("Server listen on port", port);
   } catch (error) {

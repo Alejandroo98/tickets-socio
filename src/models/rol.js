@@ -1,8 +1,8 @@
-import { DataTypes } from "sequelize";
-import sequelize from "../database/db.js";
-import { User } from "./user.js";
+const DataTypes = require("sequelize");
+const sequelize = require("../database/db.js");
+const User = require("./user.js");
 
-export const Rol = sequelize.define("rol", {
+const Rol = sequelize.define("rol", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -30,3 +30,4 @@ User.belongsTo(Rol, {
   foreignKey: "rolId",
   targetId: "id",
 });
+module.exports = Rol 

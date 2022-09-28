@@ -1,7 +1,7 @@
-import { DataTypes } from "sequelize";
-import  sequelize  from "../database/db.js";
+const DataTypes = require("sequelize");
+const sequelize = require("../database/db.js");
 
-export const Client = sequelize.define("client", {
+const Client = sequelize.define("client", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -9,28 +9,29 @@ export const Client = sequelize.define("client", {
   },
   typeDni: {
     type: DataTypes.ENUM(),
-    values: ['Cedula', 'Pasaporte', 'RUC']
+    values: ["Cedula", "Pasaporte", "RUC"],
   },
   dni: {
     type: DataTypes.STRING,
   },
-  
+
   name: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
   },
   lastName: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
   },
   email: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
   },
   password: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
   },
   phone: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
   },
   status: {
-    type: DataTypes.BOOLEAN
-  }
+    type: DataTypes.BOOLEAN,
+  },
 });
+module.exports = Client

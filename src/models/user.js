@@ -1,7 +1,7 @@
-import { DataTypes } from "sequelize";
-import  sequelize  from "../database/db.js";
+const DataTypes = require("sequelize");
+const sequelize = require("../database/db.js");
 
-export const User = sequelize.define("user", {
+const User = sequelize.define("user", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -36,3 +36,6 @@ export const User = sequelize.define("user", {
     type: DataTypes.BOOLEAN
   }
 });
+
+
+module.exports = User
