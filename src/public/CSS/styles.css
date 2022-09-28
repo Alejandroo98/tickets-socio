@@ -40,6 +40,24 @@ p {
   color: #fff;
 }
 
+.header-img-container-ticket {
+  /* background-color: red; */
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-image: url('/img/bus-ticket.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.header-img-container-ticket img {
+  width: 100%;
+  height: 100%;
+  /* display: none; */
+  object-fit: cover;
+}
+
 .header-img-container img {
   width: 100%;
   height: 100%;
@@ -79,4 +97,9 @@ p {
 .title-inicio h3 {
   padding: 20px 0;
   text-align: center;
+}
+
+
+.w-full{
+  width: 100% !important;
 }

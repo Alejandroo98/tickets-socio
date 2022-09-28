@@ -1,0 +1,75 @@
+<div class="container p-5">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <div class="card text-center">
+        <div class="card-body p-4">
+          <div class="d-flex flex-column justify-content-center mb-2">
+            <img
+              src="/img/logo_fondo_negro.jpg"
+              class="card-img-top my-4 w-25 mx-auto"
+              alt="logo"
+            />
+            <span class="h4 font-bold">Tickets Bus</span>
+            <span>Reservar nunca fué tan fácil</span>
+          </div>
+
+          {{#if message}}
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              role="alert"
+            >
+              {{message}}
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+            </div>
+          {{/if}}
+          <form action="/client/login" method="POST">
+            <div class="form-group px-4 my-4">
+              <input
+                type="email"
+                name="email"
+                value="{{valuesForm.email}}"
+                placeholder="Email"
+                class="form-control"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="form-group px-4 my-3">
+              <input
+                type="password"
+                name="password"
+                placeholder="Contraseña"
+                class="form-control"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="form-group px-4 my-2">
+              <button class="btn btn-block btn-block w-full btn-success">
+                Iniciar Sesión
+              </button>
+            </div>
+            <hr class="my-4 w-full" />
+            <div class="d-flex flex-column px-4 my-2 justify-content-center">
+              <button
+                type="button"
+                class="btn btn-outline-secondary mb-2"
+              >Continuar con Google</button>
+              <button
+                type="button"
+                class="btn btn-outline-primary mb-2"
+              >Continuar con Facebook</button>
+              <a href="#" class="my-1 text-mute">¿no recuerdás tu contraseña?</a>
+              <a href="./register" class="my-3 text-success h6">Crear una cuenta</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

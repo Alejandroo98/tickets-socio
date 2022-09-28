@@ -1,7 +1,6 @@
 import app from "./app.js";
 import sequelize  from "./database/db.js";
 
-
 const port = 3000;
 
 async function main() {

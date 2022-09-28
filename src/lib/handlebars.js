@@ -8,4 +8,4 @@ helpers.colab = (rol) => {
   }
 };
 
-module.exports = helpers;
+export default  helpers;
